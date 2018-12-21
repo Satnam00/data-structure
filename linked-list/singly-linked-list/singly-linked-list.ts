@@ -83,7 +83,7 @@ export class SinglyLinkedList {
         }
     }
 
-    /*Consider first node element index as 1 while inserting*/
+    /*Consider first node element index as 1 while removing*/
     removeAtPosition(index: number) : void {
         if(this.start == null){
             console.log('ALREADY LIST IS EMPTY !!');
@@ -163,7 +163,7 @@ list.printList();
 // List:  20 abc 10
 
 
-//2. remove node based on data
+//2. add nodes in last position
 list.addLast(90);
 list.addFirst("a");
 list.printList();
@@ -210,6 +210,8 @@ list.printList();
 // List:  a 20 abc 10 90 56
 // List:  a 20 10 90 56 89
 
+
+//7. update node at specific position
 list.updateAtPosition(24,3);
 list.printList();
 // List:  a 20 24 90 56 89
