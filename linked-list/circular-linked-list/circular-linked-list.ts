@@ -30,13 +30,10 @@ export class CircularLinkedList {
             this.start = newNode;
         }else {
             let temp = this.start;
-            while( temp.next != this.start){
-                temp = temp.next;
-            }
-            newNode.next = temp.next;
-            newNode.prev = temp;
-            temp.next = newNode;
-            this.start.prev = newNode;
+            newNode.next = temp;
+            newNode.prev = temp.prev;
+            temp.prev = newNode;
+            newNode.prev.next = newNode;
         }
         this.size++;
     }
@@ -76,9 +73,39 @@ export class CircularLinkedList {
             temp.prev = newNode;
             newNode.prev.next = newNode;
             this.size++;
+        }else{
+            console.log('INVALID POSITION');
         }
     }
 
+    deleteFirst() : void {
+        if(this.start == null){
+            console.log('THE LIST IS ALREADY EMPTY');
+        } else if (this.start.next == this.start){
+            this.start = null;
+        }
+        else {
+            let temp = this.start;
+            temp.prev.next = temp.next;
+            temp.next.prev = temp.prev;
+            this.start = temp.next;
+            temp = null;
+        }
+    }
+
+    deleteLast() : void {
+        if(this.start == null) {
+            console.log('THE LIST IS ALREADY EMPTY');
+        } else if(this.start.next == this.start){
+            this.start = null;
+        }
+        else {
+           let lastNode = this.start.prev;
+           lastNode.prev.next = lastNode.next;
+           lastNode.next.prev = lastNode.prev;
+           lastNode = null;
+        }
+    }
 
     displayList () : void {
         if(this.start == null) {
@@ -105,13 +132,25 @@ list.addFirst(40);
 list.displayList();
 // LIST IS :  40 10 20
 
+
 list.addLast(23);
 list.addLast(56);
 list.displayList();
 // LIST IS :  40 10 20 23 56
+
 
 list.addAtPosition(37 , 5);
 list.addAtPosition(7 , 4);
 list.addAtPosition(9 , 1);
 list.displayList();
 // LIST IS :  9 40 10 20 7 23 37 56
+
+
+list.deleteFirst();
+list.displayList();
+// LIST IS :  40 10 20 7 23 37 56
+
+
+list.deleteLast();
+list.displayList();
+// LIST IS :  40 10 20 7 23 37
