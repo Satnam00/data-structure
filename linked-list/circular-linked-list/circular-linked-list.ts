@@ -63,7 +63,7 @@ list.addFirst(20);
 list.addFirst(10);
 list.addFirst(40);
 list.displayList();
-// LIST IS :  20 10 40
+// LIST IS :  40 10 20
 
 list.addLast(23);
 list.addLast(56);
