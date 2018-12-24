@@ -4,24 +4,6 @@ export class CircularLinkedList {
     private start: NodeStructure;
     private size: number = 0;
 
-    addLast (data : number) : void {
-        let newNode = new NodeStructure();
-        newNode.data = data;
-        if(this.start == null) {
-            newNode.next = newNode.prev = newNode;
-            this.start = newNode;
-        }else {
-            let temp = this.start;
-            while( temp.next != this.start){
-                temp = temp.next;
-            }
-            newNode.next = temp.next;
-            temp.next = newNode;
-            this.start.prev = newNode;
-        }
-        this.size++;
-    }
-
     addFirst (data : number) : void {
         let newNode = new NodeStructure();
         newNode.data = data;
@@ -39,6 +21,64 @@ export class CircularLinkedList {
         }
         this.size++;
     }
+
+    addLast (data : number) : void {
+        let newNode = new NodeStructure();
+        newNode.data = data;
+        if(this.start == null) {
+            newNode.next = newNode.prev = newNode;
+            this.start = newNode;
+        }else {
+            let temp = this.start;
+            while( temp.next != this.start){
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            newNode.prev = temp;
+            temp.next = newNode;
+            this.start.prev = newNode;
+        }
+        this.size++;
+    }
+
+    addAtPosition (data : number, index: number) {
+
+        let newNode = new NodeStructure();
+        newNode.data = data;
+        if(this.start == null) {
+            newNode.next = newNode.prev = newNode;
+            this.start = newNode;
+        }else if(index == 1) {
+            this.addFirst(data);
+        }else if (index == this.size+1) {
+            this.addLast(data);
+        }else if(index > 1 && index <= this.size) {
+            let counter = 1;
+            let temp = this.start;
+
+            // traversing start from (HEAD)
+            if( index < this.size/2 ) {
+                while (counter < index){
+                    temp = temp.next;
+                    counter++;
+                }
+            }
+            // traversing start from (TAIL)
+            else {
+                let counter = this.size;
+                while ( counter >= index) {
+                    temp = temp.prev;
+                    counter--;
+                }
+            }
+            newNode.prev = temp.prev;
+            newNode.next = temp;
+            temp.prev = newNode;
+            newNode.prev.next = newNode;
+            this.size++;
+        }
+    }
+
 
     displayList () : void {
         if(this.start == null) {
@@ -70,3 +110,8 @@ list.addLast(56);
 list.displayList();
 // LIST IS :  40 10 20 23 56
 
+list.addAtPosition(37 , 5);
+list.addAtPosition(7 , 4);
+list.addAtPosition(9 , 1);
+list.displayList();
+// LIST IS :  9 40 10 20 7 23 37 56
