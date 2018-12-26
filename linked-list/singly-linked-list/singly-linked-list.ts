@@ -151,4 +151,16 @@ export class SinglyLinkedList {
         return this.size;
     }
 
+    getStartNode() : NodeStructure {
+        return this.start;
+    }
+
+    increaseByOneSizeOfList() : number {
+        return ++this.size;
+    }
+
+    decreaseByOneSizeOfList() : number {
+        return --this.size;
+    }
+
 }
