@@ -4,7 +4,7 @@ Binary Tree is a special datastructure used for data storage purposes. A binary 
 ![alt text](../assets/binary_tree.png "BINARY TREE")
 
 # Important Terms
-# Following are the important terms with respect to tree.
+**Following are the important terms with respect to tree.**
 
 **Path** − Path refers to the sequence of nodes along the edges of a tree.
 
