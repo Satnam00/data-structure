@@ -1,5 +1,6 @@
 #System Files
 linked-list/**/*.js
+tree/**/*.js
 
 #IDEs and editors
 /.idea
