@@ -1,24 +1,5 @@
-Input:
-          4
-        /   \
-       3     5
-      /       \
-     2         6
-    /           \
-   1             7
 
-   height : 4
-
-Output:
-         4
-       /    \
-      2      6
-    /  \    /  \
-    1    3  5    7
-
-    height : 3
-
-
+![alt text](../../assets/b-bst.png "BALANCED BINARY SEARCH TREE")
 
 A Simple Solution is to traverse nodes in Inorder and one by one insert into a self-balancing BST like AVL tree.
 Time complexity of this solution is O(n Log n) and this solution doesn’t guarantee
