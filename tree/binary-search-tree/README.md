@@ -4,4 +4,4 @@ The left subtree of a node contains only nodes with keys lesser than the node’
 The right subtree of a node contains only nodes with keys greater than the node’s key.
 The left and right subtree each must also be a binary search tree.
 
-![alt text](../../assets/BSTSearch.png.png "BINARY SEARCH TREE")
+![alt text](../../assets/BSTSearch.png "BINARY SEARCH TREE")
