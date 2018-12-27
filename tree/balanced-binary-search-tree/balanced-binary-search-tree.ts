@@ -37,17 +37,3 @@ export class BalancedBinarySearchTree {
         return root;
     }
 }
-
-let bst = new BinarySearchTree();
-bst.addChild(10);
-bst.addChild(3);
-bst.addChild(4);
-bst.addChild(34);
-bst.addChild(16);
-bst.addChild(13);
-bst.addChild(19);
-bst.addChild(1);
-
-let balancedBST = new BalancedBinarySearchTree();
-let root = balancedBST.buildTree(bst.getRoot());
-bst.inorder(root);
