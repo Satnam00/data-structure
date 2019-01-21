@@ -12,4 +12,4 @@ Now lets take examples of different types of common software one sees and see wh
 6. Machine Learning: Requires efficient implementations of Matrix (2D Vectors) and Tensors (2+D vectors). Many Linear Algebra libraries are low level Matrix implementations with various Matrix operations built in. For Example, BLAS,NumPy, Eigen,CUDA etc.
 So essentially everything which is a software around us is a customized implementation of one or more Data Structures.
 
-content source : https://www.quora.com/What-is-the-importance-of-data-structures
+content source : https://www.quora.com/What-is-the-importance-of-data-structuresEXPERIMENT
