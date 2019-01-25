@@ -1,0 +1,5 @@
+class QueueUsingLinkedList {
+    constructor () {
+
+    }
+}
